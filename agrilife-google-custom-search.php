@@ -17,7 +17,32 @@ define( 'AGCS_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
 require_once( AGCS_DIR_PATH . 'fields/settings.php');
 
-add_action( 'admin_menu', function(){
+// Register styles used in the plugin
+function agcs_register_styles(){
+
+  wp_register_style(
+    'arilife-gcs-styles',
+    plugin_dir_url( __FILE__ ) . 'css/agrilife-google-custom-search.css',
+    array(),
+    '',
+    'screen'
+  );
+
+}
+
+add_action( 'wp_enqueue_scripts', 'agcs_register_styles' );
+
+// Queue styles used in the plugin
+function agcs_enqueue_styles(){
+
+    wp_enqueue_style( 'arilife-gcs-styles' );
+
+}
+
+add_action( 'wp_enqueue_scripts', 'agcs_enqueue_styles' );
+
+// Add admin menu page for the site's Google Custom Search ID
+function agcs_admin_menu(){
 
   if( !class_exists('acf') || !function_exists('acf_add_options_sub_page') ){
 
@@ -35,10 +60,11 @@ add_action( 'admin_menu', function(){
 
   }
 
-});
+}
 
-add_filter('template_include', 'agcs_search_template', 99);
+add_action( 'admin_menu', 'agcs_admin_menu' );
 
+// Use custom archive template based on situation
 function agcs_search_template( $template ){
 
   global $wp_query;
@@ -64,8 +90,9 @@ function agcs_search_template( $template ){
 
 }
 
-add_filter( 'the_content', 'agcs_search_content', 99 );
+add_filter('template_include', 'agcs_search_template', 99);
 
+// Handle some archives without using a custom template
 function agcs_search_content( $content ){
 
   global $wp_query;
@@ -91,6 +118,9 @@ function agcs_search_content( $content ){
 
 }
 
+add_filter( 'the_content', 'agcs_search_content', 99 );
+
+// Provide error message during installation if dependencies not present
 function agcs_error(){
 
   if( !class_exists('acf') )

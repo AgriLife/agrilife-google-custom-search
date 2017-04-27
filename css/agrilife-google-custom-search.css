@@ -1,0 +1,16 @@
+#cse table tr th,
+#cse table tr td {
+	padding: 0;
+}
+
+#cse .gcsc-branding {
+	line-height: 14px;
+}
+
+#cse .gcsc-branding-img-noclear {
+	vertical-align: middle;
+}
+
+#cse table.gsc-above-wrapper-area-container {
+	background-color: transparent;
+}
