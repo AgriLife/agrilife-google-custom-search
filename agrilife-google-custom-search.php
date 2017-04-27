@@ -39,16 +39,23 @@ add_action( 'admin_menu', function(){
 
 add_filter('template_include', 'agcs_search_template', 99);
 
-function agcs_search_template($template){
+function agcs_search_template( $template ){
 
   global $wp_query;
 
+  // If on a search results page
   if ($wp_query->is_search){
 
     $theme = wp_get_theme()->Name;
 
     if( $theme == 'AgriLife-News' ){
-      return AGCS_DIR_PATH . 'templates/search-agrilifenews.php';
+
+      return AGCS_DIR_PATH . 'templates/archive-agrilifenews.php';
+
+    } else if( $theme == 'AgriFlex3' ){
+
+      return AGCS_DIR_PATH . 'templates/archive-agriflex3.php';
+
     }
 
   }
@@ -62,11 +69,13 @@ add_filter( 'the_content', 'agcs_search_content', 99 );
 function agcs_search_content( $content ){
 
   global $wp_query;
+
+  // If on a search results page
   if ($wp_query->is_search){
 
     $theme = wp_get_theme()->Name;
 
-    if( $theme != 'AgriLife-News' ){
+    if( $theme != 'AgriLife-News' && $theme != 'AgriFlex3' ){
 
       $search_id = get_field( 'google_custom_search_id', 'option' );
 

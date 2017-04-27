@@ -17,7 +17,7 @@ get_header(); ?>
       <h1 class="page-title section-title"><?php printf( __( 'Search Results for: %s', 'flexopotamus' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
     </header>
 
-    <?php /* Start the Loop */  
+    <?php /* Start the Loop */
 
     $agcs_search_id = get_field( 'google_custom_search_id', 'option' );
 
@@ -29,7 +29,7 @@ get_header(); ?>
   </section><!-- /end #content -->
 
 <?php get_sidebar(); ?>
-  
+
 </div><!-- /.content-wrap -->
 
 <?php get_footer(); ?>
