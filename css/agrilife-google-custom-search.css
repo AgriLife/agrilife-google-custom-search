@@ -3,14 +3,29 @@
 	padding: 0;
 }
 
-#cse .gcsc-branding {
-	line-height: 14px;
+#cse .gs-title {
+	line-height: 1;
+}
+
+#cse .gs-title {
+	text-decoration: underline;
+}
+
+#cse .gsc-above-wrapper-area-container td,
+#cse .gcsc-branding,
+#cse .gsc-url-top,
+#cse .gsc-table-result .gsc-table-cell-snippet-close {
+	line-height: 1;
 }
 
 #cse .gcsc-branding-img-noclear {
 	vertical-align: middle;
 }
 
-#cse table.gsc-above-wrapper-area-container {
+#cse table {
 	background-color: transparent;
+}
+
+#cse .gsc-table-cell-snippet-close {
+	padding: 0 8px;
 }
