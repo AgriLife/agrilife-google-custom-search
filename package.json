@@ -1,0 +1,23 @@
+{
+  "name": "agrilife-google-custom-search",
+  "version": "1.0.1",
+  "description": "Replaces the default WordPress search results page with Google Custom Search Engine.",
+  "main": "agrilife-google-custom-search.php",
+  "scripts": {},
+  "engines": {
+    "node": "4.0.0"
+  },
+  "dependencies": {
+    "grunt": "~0.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AgriLife/agrilife-google-custom-search.git"
+  },
+  "author": "Zachary Watkins",
+  "license": "GPL-2.0+",
+  "bugs": {
+    "url": "https://github.com/AgriLife/agrilife-google-custom-search/issues"
+  },
+  "homepage": "https://github.com/AgriLife/agrilife-google-custom-search#readme"
+}
