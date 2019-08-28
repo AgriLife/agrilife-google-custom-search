@@ -1,6 +1,6 @@
 {
   "name": "agrilife-google-custom-search",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Replaces the default WordPress search results page with Google Custom Search Engine.",
   "main": "agrilife-google-custom-search.php",
   "scripts": {},
