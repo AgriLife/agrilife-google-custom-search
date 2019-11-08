@@ -86,6 +86,10 @@ function agcs_search_template( $template ){
 
       return AGCS_DIR_PATH . 'templates/archive-agriflex4.php';
 
+    } else if( $theme == 'AgriLife Today' ){
+
+      return AGCS_DIR_PATH . 'templates/archive-agrilifetoday.php';
+
     }
 
   }

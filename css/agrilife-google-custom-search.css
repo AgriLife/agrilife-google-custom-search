@@ -1,6 +1,7 @@
 #cse table tr th,
 #cse table tr td {
 	padding: 0;
+	border: none;
 }
 
 #cse .gs-title {
@@ -28,4 +29,14 @@
 
 #cse .gsc-table-cell-snippet-close {
 	padding: 0 8px;
+}
+
+.gsc-control-cse table td,
+table.gsc-input,
+table.gsc-above-wrapper-area-container {
+	border: none;
+}
+
+input.gsc-input[type="text"] {
+	padding-left: .25em !important;
 }
