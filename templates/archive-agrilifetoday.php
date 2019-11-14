@@ -15,7 +15,7 @@ remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 // Add search results page title
 add_action( 'genesis_before_loop', function() {
 
-	$heading = '<div class="archive-description heading-sideline"><div class="grid-x"><div class="cell auto title-line"></div><h1 class="archive-title two-line">Search Results for:<br>%s</h1><div class="cell auto title-line"></div></div></div>';
+	$heading = '<div class="archive-description heading-sideline"><div class="grid-x"><div class="cell auto title-line"></div><h1 class="archive-title two-line">Search Results</h1><div class="cell auto title-line"></div></div></div>';
 
   $title = sprintf( $heading, get_search_query() );
 
